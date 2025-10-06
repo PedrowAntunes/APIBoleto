@@ -6,70 +6,76 @@ A documentação interativa da API é disponibilizada pelo Swagger, facilitando 
 
 # Tecnologias Utilizadas
 
-.NET 6
+- .NET 6
 
-Entity Framework Core
+- Entity Framework Core
 
-PostgreSQL
+- PostgreSQL
 
-Swagger (OpenAPI)
+- Swagger (OpenAPI)
 
-C#
+- C#
+
+# Como configurar e executar o projeto:
+
+- Clonar ou baixar o projeto
+- Utilizando o Postgre, crie um banco de dados chamado APIBoleto (ou outro nome de sua preferência)
+- Configure a connection string no appsettings.json
+- Aplique as migrations existentes para criar as tabelas
+- Rodar a API
+- Utilize o Swagger para consultar: URL do Swagger (http://localhost:5000/swagger)
 
 # Estrutura de Entidades
-- Banco
+## Banco
 
-Representa os bancos disponíveis para cadastro de boletos.
+- Representa os bancos disponíveis para cadastro de boletos.
 
-- Propriedades:
+## Propriedades:
 
-Id (obrigatório): Identificador único do banco.
+- Id (obrigatório): Identificador único do banco.
 
-Nome (obrigatório): Nome do banco.
+- Nome (obrigatório): Nome do banco.
 
-Codigo (obrigatório): Código do banco.
+- Codigo (obrigatório): Código do banco.
 
-PercentualJuros (obrigatório): Percentual de juros aplicado aos boletos vencidos.
+- PercentualJuros (obrigatório): Percentual de juros aplicado aos boletos vencidos.
 
-- Boleto
+## Boleto
 
-Representa os boletos a serem pagos ou recebidos.
+- Representa os boletos a serem pagos ou recebidos.
 
-- Propriedades:
+## Propriedades:
 
-Id (obrigatório): Identificador único do boleto.
+- Id (obrigatório): Identificador único do boleto.
 
-NomePagador (obrigatório)
+- NomePagador (obrigatório)
 
-CpfCnpjPagador (obrigatório)
+- CpfCnpjPagador (obrigatório)
 
-NomeBeneficiario (obrigatório)
+- NomeBeneficiario (obrigatório)
 
-CpfCnpjBeneficiario (obrigatório)
+- CpfCnpjBeneficiario (obrigatório)
 
-Valor (obrigatório)
+- Valor (obrigatório)
 
-DataVencimento (obrigatório)
+- DataVencimento (obrigatório)
 
-Observacao (opcional)
-
-BancoId (obrigatório): Referência ao banco associado ao boleto.
 
 # Endpoints
-- Banco
+## Banco
 
-POST /api/banco
+- POST /api/banco
 Cadastra um novo banco.
 
-GET /api/banco
+- GET /api/banco
 Retorna todos os bancos cadastrados.
 
-GET /api/banco/{codigo}
+- GET /api/banco/{codigo}
 Retorna um banco específico pelo código.
 
-Boleto
+## Boleto
 
-POST /api/boleto
+- POST /api/boleto
 Cadastra um novo boleto. Todos os campos obrigatórios devem ser preenchidos.
 
 GET /api/boleto/{id}
