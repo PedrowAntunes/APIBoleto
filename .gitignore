@@ -1,0 +1,21 @@
+# Builds
+bin/
+obj/
+
+# Configurações locais
+.env
+appsettings.Development.json
+
+# Usuário e IDEs
+.vscode/
+.idea/
+.vs/
+
+# Logs e backups
+*.log
+*.bak
+*.tmp
+
+# Banco de dados locais
+*.db
+*.sqlite
