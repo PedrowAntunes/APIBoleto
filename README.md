@@ -78,7 +78,7 @@ Retorna um banco específico pelo código.
 - POST /api/boleto
 Cadastra um novo boleto. Todos os campos obrigatórios devem ser preenchidos.
 
-GET /api/boleto/{id}
+- GET /api/boleto/{id}
 Retorna um boleto pelo seu ID.
 
 Caso o boleto esteja vencido, o valor retornado será acrescido do percentual de juros do banco correspondente.
